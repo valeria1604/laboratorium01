@@ -20,7 +20,6 @@ public class Planet {
         colour = PlanetColour.UNKNOWN;
         setMass(mass);
         setRadius(radius);
-        //System.out.println(PlanetConsoleApp.MENU);
         setSatellitesCount(satellitesCount);
     }
 
@@ -40,7 +39,7 @@ public class Planet {
     }
 
     public static Planet readFromFile(String file_name) throws PlanetException {
-        try (BufferedReader reader = new BufferedReader(new FileReader(new File(file_name)))) {
+        try (BufferedReader reader = new BufferedReader(new FileReader(file_name))) {
             return Planet.readFromFile(reader);
         } catch (FileNotFoundException e){
             throw new PlanetException("Document wasn't found" + file_name);
